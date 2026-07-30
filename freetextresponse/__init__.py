@@ -4,4 +4,5 @@ Instructors can specify a list of phrases, of which one must be
 present in order for the student to receive credit.
 """
 
-__version__ = "5.1.0"
+from importlib.metadata import version
+__version__ = version("xblock-free-text-response")
