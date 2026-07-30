@@ -1,8 +1,0 @@
-# Requirements for code quality checks
--c constraints.txt
-
--r base.txt
--r test.txt
-
-pycodestyle
-pylint

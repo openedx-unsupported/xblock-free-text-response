@@ -11,14 +11,14 @@ translations_rename_to_textmo:  ## Renames django-partial.po to text.mo for XBlo
 translations_extract: ## extract strings to be translated, outputting .po files
 	# Extract Python and Django template strings
 	mkdir -p $(I18N_SOURCE_DIR)
-	tox -e translations_extract
+	uv run tox -e translations_extract
 	make translations_rename_to_textmo
 
 translations_compile: ## compile translation files, outputting .mo files for each supported language
-	tox -e translations_compile
+	uv run tox -e translations_compile
 
 translations_detect_changed: ## Determines if the source translation files are up-to-date, otherwise exit with a non-zero code.
-	tox -e translations_detect_changed || \
+	uv run tox -e translations_detect_changed || \
 	    (  \
 	        echo "====" &&  \
 	        echo "Translations have changes. Run 'make translations_extract' locally to update them." &&  \
@@ -28,14 +28,14 @@ translations_detect_changed: ## Determines if the source translation files are u
 	make translations_rename_to_textmo
 
 translations_pull: ## pull translations from Transifex
-	tox -e translations_pull
+	uv run tox -e translations_pull
 	make translations_compile
 
 translations_push: translations_extract ## push source translation files (.po) to Transifex
-	tox -e translations_push
+	uv run tox -e translations_push
 
 translations_dummy: ## generate dummy translation (.po) files
-	tox -e translations_dummy
+	uv run tox -e translations_dummy
 
 translations_build_dummy: translations_extract translations_dummy translations_compile ## generate and compile dummy translation files
 

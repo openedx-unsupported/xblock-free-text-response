@@ -16,7 +16,6 @@ requires-python = ">=3.11"
 classifiers = [
     "Intended Audience :: Developers",
     "Intended Audience :: Education",
-    "License :: OSI Approved :: GNU Affero General Public License v3",
     "Operating System :: OS Independent",
     "Programming Language :: JavaScript",
     "Programming Language :: Python :: 3",
@@ -62,6 +61,16 @@ conflicts = [
     ],
 ]
 
+#  DO NOT EDIT constraint-dependencies DIRECTLY.
+#  This list is managed by `edx_lint write_uv_constraints`
+#  and will be overwritten the next time `make upgrade` is run.
+#  - GLOBAL constraints: edit edx_lint/files/common_constraints.txt
+#  - REPO-SPECIFIC constraints: edit [tool.edx_lint].uv_constraints in this file
+constraint-dependencies = [
+    "Django<6.0",
+    "elasticsearch<7.14.0",
+    "lxml<5.0.0",
+]
 [tool.edx_lint]
 uv_constraints = [
     "lxml<5.0.0",  # xblock-sdk compatibility
