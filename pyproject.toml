@@ -40,6 +40,7 @@ Homepage = "https://github.com/Stanford-Online/xblock-free-text-response"
 freetextresponse = "freetextresponse.xblocks:FreeTextResponse"
 
 [tool.setuptools.packages.find]
+where = ["src"]
 include = ["freetextresponse*"]
 
 [tool.setuptools.exclude-package-data]
@@ -72,9 +73,7 @@ constraint-dependencies = [
     "lxml<5.0.0",
 ]
 [tool.edx_lint]
-uv_constraints = [
-    "lxml<5.0.0",  # xblock-sdk compatibility
-]
+uv_constraints = []
 
 [dependency-groups]
 test-base = [
@@ -112,7 +111,7 @@ dev = [
 
 [tool.coverage.run]
 branch = true
-source = ["freetextresponse"]
+source_pkgs = ["freetextresponse"]
 omit = [
     "*/tests/*",
     "*/migrations/*",
@@ -139,5 +138,3 @@ directory = "htmlcov"
 
 [tool.semantic_release]
 build_command = "python -m pip install --upgrade build && SETUPTOOLS_SCM_PRETEND_VERSION=$NEW_VERSION python -m build"
-allow_zero_version = true
-major_on_zero = false

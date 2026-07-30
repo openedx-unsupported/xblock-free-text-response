@@ -1,5 +1,5 @@
 #!/usr/bin/make -f
-module_root := freetextresponse
+module_root := src/freetextresponse
 css_files := $(patsubst %.less, %.css, $(wildcard ./$(module_root)/public/*.less))
 html_files := $(wildcard $(module_root)/templates/*.html)
 js_files := $(wildcard $(module_root)/public/*.js)
