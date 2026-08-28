@@ -1,5 +1,8 @@
 # Changelog
 
+## Version 5.1.1
+* Deprecated this repository; the XBlock has moved to [xblocks-extra](https://github.com/openedx/xblocks-extra).
+
 ## Version 5.1.0
 * Added django52 support.
 
