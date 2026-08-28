@@ -1,3 +1,16 @@
+.. image:: https://img.shields.io/badge/status-deprecated-red
+   :alt: Status
+
+###############################
+This repository is deprecated
+###############################
+
+**This repository is no longer maintained.**
+
+The Free Text Response XBlock has been moved to `xblocks-extra <https://github.com/openedx/xblocks-extra>`_.
+
+Please use the new repository for all future work.
+
 Free Text Response XBlock
 ================================
 
